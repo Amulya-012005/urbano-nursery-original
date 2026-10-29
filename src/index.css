@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --theme-gold: #eab308;
+    --theme-gold-light: #fef08a;
+    --theme-gold-dark: #a16207;
+    --theme-emerald: #10b981;
+    --theme-emerald-hover: #059669;
+    --theme-forest-dark: #06140b;
+    --theme-forest-surface: #0a2114;
+    --theme-text-primary: #fefce8;
+    --theme-text-muted: #d1d5db;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #06140b;
+    color: #fefce8;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Distinct Luxury Botanical Font Style */
+  h1, h2, h3, .font-serif-botanical {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-display-modern {
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Highlighted Slight Green & Golden Yellowish Boxes */
+.plant-card-gold {
+  background: linear-gradient(145deg, rgba(8, 34, 20, 0.90) 0%, rgba(22, 44, 18, 0.88) 50%, rgba(42, 44, 12, 0.86) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(234, 179, 8, 0.38);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 20px -2px rgba(234, 179, 8, 0.16), inset 0 1px 0 rgba(254, 240, 138, 0.25);
+  color: #fefce8;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.plant-card-gold:hover {
+  transform: translateY(-6px);
+  border-color: rgba(250, 204, 21, 0.75);
+  box-shadow: 0 24px 48px -10px rgba(0, 0, 0, 0.85), 0 0 28px 4px rgba(234, 179, 8, 0.32), inset 0 1px 0 rgba(254, 240, 138, 0.45);
+}
+
+/* Base Glass Panels with Green-Gold Highlight */
+.glass-panel {
+  background: linear-gradient(145deg, rgba(8, 30, 18, 0.86) 0%, rgba(18, 38, 16, 0.84) 50%, rgba(32, 40, 12, 0.82) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(234, 179, 8, 0.30);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.7), 0 0 20px -2px rgba(234, 179, 8, 0.12), inset 0 1px 0 rgba(254, 240, 138, 0.18);
+  color: #fefce8;
+}
+
+.glass-panel-dark {
+  background: linear-gradient(155deg, rgba(5, 22, 13, 0.94) 0%, rgba(14, 28, 11, 0.93) 60%, rgba(26, 30, 8, 0.92) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(234, 179, 8, 0.38);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.8), 0 0 24px -2px rgba(234, 179, 8, 0.18);
+  color: #fefce8;
+}
+
+/* Golden Yellow Badges & Glows */
+.gold-badge {
+  background: rgba(234, 179, 8, 0.18);
+  border: 1px solid rgba(250, 204, 21, 0.5);
+  color: #fef08a;
+  box-shadow: 0 2px 8px -1px rgba(234, 179, 8, 0.25);
+}
+
+.green-badge {
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  color: #a7f3d0;
+  box-shadow: 0 2px 8px -1px rgba(16, 185, 129, 0.25);
+}
+
+/* 3D perspective card hover */
+.card-perspective {
+  perspective: 1000px;
+}
+
+.card-3d-hover {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d-hover:hover {
+  transform: translateY(-6px) rotateX(1.2deg) rotateY(-0.6deg);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.8), 0 0 28px 4px rgba(234, 179, 8, 0.25);
+}
+
+/* Floating organic animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .card-3d-hover,
+  .plant-card-gold {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing & Coverage
+coverage/
+
+# Production & Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Environment variables
+.env*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# AI Studio & Internal Caches
+.aistudio/
+.tempmediaStorage/
+.cache/
+.vite/
+.vercel/
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/*
+!.vscode/extensions.json
+.idea/

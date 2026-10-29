@@ -1,0 +1,6 @@
+{
+  "name": "Urbano Nursery",
+  "description": "Premium botanical digital marketplace for buying plants, gardening supplies, and booking verified gardeners for home plant care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
